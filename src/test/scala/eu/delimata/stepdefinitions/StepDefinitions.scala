@@ -1,11 +1,9 @@
 package eu.delimata.stepdefinitions
 
-import eu.delimata.TestRunner1
 import eu.delimata.pages.CustomersPage
 import io.cucumber.scala.{EN, ScalaDsl}
 import lombok.extern.slf4j.Slf4j
 import org.assertj.core.api.Assertions
-import org.openqa.selenium.WebDriver
 
 
 @Slf4j
@@ -54,8 +52,4 @@ class StepDefinitions extends ScalaDsl with EN {
   Then("""the user should see that the search result summary is as in the very beginning""") { () =>
     Assertions.assertThat(customersPage.getSummaryText).isEqualTo(searchSummaryAtVeryBeginning)
   }
-}
-
-object StepDefinitions {
-  var driver: WebDriver = TestRunner1.driver
 }
